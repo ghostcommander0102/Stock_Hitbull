@@ -7,10 +7,12 @@ public class MainController : MonoBehaviour
     public GameObject playWithFriendDlg;
     public GameObject WelcomeDialog;
     public GameObject ProfilePage;
+    public GameObject leaderBoardDialog;
     // Start is called before the first frame update
     void Start()
     {
         WelcomeDialog.SetActive(true);
+        leaderBoardDialog.SetActive(true);
     }
 
     // Update is called once per frame
@@ -32,14 +34,17 @@ public class MainController : MonoBehaviour
     }
 
     public void Stock_btnClicked() {
+        PlayerPrefs.SetInt("gameMode", 1);
         SceneManager.LoadScene("Game");
     }
 
     public void Crypto_btnClicked() {
+        PlayerPrefs.SetInt("gameMode", 1);
         SceneManager.LoadScene("Game");
     }
 
     public void Forex_btnClicked() {
+        PlayerPrefs.SetInt("gameMode", 1);
         SceneManager.LoadScene("Game");
     }
 

@@ -145,4 +145,9 @@ public static class Global
         "Warhammer"
     };
     public static string weapon_path = "Texture/weapon-icons/";
+
+    public static float getRatio()
+    {
+        return Screen.width / 1280.0f;
+    }
 }

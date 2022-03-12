@@ -23,12 +23,12 @@ public class ProfileController : MonoBehaviour
         float posx = avatarContent.transform.GetChild(0).position.x, posy = avatarContent.transform.GetChild(0).position.y;
         for(int i = 0; i < Global.avatar_url.Length; i++)
         {
-            float tmpx = posx + (i % 6) * 380;
-            float tmpy = posy - (i / 6) * 400;
+            float tmpx = posx + (i % 6) * 152 * Global.getRatio();
+            float tmpy = posy - (i / 6) * 190 * Global.getRatio();
             GameObject cloneItem = Instantiate(itemObj, new Vector3(tmpx, tmpy, 0), itemObj.transform.rotation, avatarContent.transform);
             cloneItem.GetComponent<ItemController>().setData(Global.avatar_path + Global.avatar_url[i], 0);
         }
-        avatarContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.avatar_url.Length / 6 + ((Global.avatar_url.Length % 6) > 0 ? 1 : 0)) * 190);
+        avatarContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.avatar_url.Length / 6 + ((Global.avatar_url.Length % 6) > 0 ? 1 : 0)) * 190 * Global.getRatio());
 
     }
 
@@ -37,12 +37,12 @@ public class ProfileController : MonoBehaviour
         float posx = avatarContent.transform.GetChild(0).position.x, posy = avatarContent.transform.GetChild(0).position.y;
         for (int i = 0; i < Global.ring_url.Length; i++)
         {
-            float tmpx = posx + (i % 6) * 380;
-            float tmpy = posy - (i / 6) * 400;
+            float tmpx = posx + (i % 6) * 152 * Global.getRatio();
+            float tmpy = posy - (i / 6) * 190 * Global.getRatio();
             GameObject cloneItem = Instantiate(itemObj, new Vector3(tmpx, tmpy, 0), itemObj.transform.rotation, ringContent.transform);
             cloneItem.GetComponent<ItemController>().setData(Global.ring_path + Global.ring_url[i], 1);
         }
-        ringContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.ring_url.Length / 6 + ((Global.ring_url.Length % 6) > 0 ? 1 : 0)) * 190);
+        ringContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.ring_url.Length / 6 + ((Global.ring_url.Length % 6) > 0 ? 1 : 0)) * 190 * Global.getRatio());
     }
 
     void initWeaponContent()
@@ -50,12 +50,12 @@ public class ProfileController : MonoBehaviour
         float posx = avatarContent.transform.GetChild(0).position.x, posy = avatarContent.transform.GetChild(0).position.y;
         for (int i = 0; i < Global.weapon_url.Length; i++)
         {
-            float tmpx = posx + (i % 6) * 380;
-            float tmpy = posy - (i / 6) * 400;
+            float tmpx = posx + (i % 6) * 152 * Global.getRatio();
+            float tmpy = posy - (i / 6) * 190 * Global.getRatio();
             GameObject cloneItem = Instantiate(itemObj, new Vector3(tmpx, tmpy, 0), itemObj.transform.rotation, weaponContent.transform);
             cloneItem.GetComponent<ItemController>().setData(Global.weapon_path + Global.weapon_url[i], 2);
         }
-        weaponContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.weapon_url.Length / 6 + ((Global.weapon_url.Length % 6) > 0 ? 1 : 0)) * 190);
+        weaponContent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Global.weapon_url.Length / 6 + ((Global.weapon_url.Length % 6) > 0 ? 1 : 0)) * 190 * Global.getRatio());
     }
 
     // Update is called once per frame

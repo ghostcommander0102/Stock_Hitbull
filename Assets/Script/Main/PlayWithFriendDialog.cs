@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayWithFriendDialog : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -19,5 +19,11 @@ public class PlayWithFriendDialog : MonoBehaviour
     public void closeBtnClicked()
     {
         gameObject.SetActive(false);
+    }
+
+    public void submitBtnClicked()
+    {
+        PlayerPrefs.SetInt("gameMode", 0);
+        SceneManager.LoadScene("Game");
     }
 }
